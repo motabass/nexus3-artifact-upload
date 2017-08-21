@@ -1,14 +1,19 @@
-# Nexus 3 Artifact Upload [![Build Status](https://travis-ci.org/TOPdesk/nexus3-artifact-upload.svg?branch=master)](https://travis-ci.org/TOPdesk/nexus3-artifact-upload)
+# Nexus 3 Artifact Upload
 > A drop-in solution for the missing artifact upload UI for [Sonatype Nexus 3 Repository](https://www.sonatype.com/nexus-repository-oss).
 
 ![Screenshot](screenshot.png "Screenshot")
 
 ## Table of Contents
+- [Build](#build)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [Known issues](#known-issues)
 - [License](#license)
+
+## Build
+Run ```npm install && npm run build```
+Afterwards you find the built file in *dist/index.html*
 
 ## Installation
 Our goal was to make installation as easy as possible: you need to *host* the *index.html* file on your Nexus 3 installation in a raw repository, that has public access. Yes, that is all.
