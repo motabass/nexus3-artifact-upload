@@ -12,14 +12,14 @@ $(() => {
     if (window.location.hash === '#!content') {
       initializeUploaderContent($(document).contents());
     } else {
-      $(`<iframe width="100%" height="100%" frameborder="0" src="${baseUrl}"/>`)
-      .appendTo(document.body)
-       .on('load', (event) => {
+      $(`<iframe width="100%" height="100%" frameborder="0" src="${baseUrl}"/>`).appendTo(document.body).on('load', (event) => {
         const nexusFrame = $(event.target);
         const nexusWindow = nexusFrame.prop('contentWindow');
 
         // When navigating to other parts of nexus, the main window should be used
-        nexusWindow.addEventListener('hashchange', e => (window.location = e.newURL));
+        nexusWindow.addEventListener('hashchange', (e) => {
+          window.location = e.newURL;
+        });
 
         // When Nexus3 has been loaded to the iframe, delete all other
         // content, and add an iframe into the Nexus3 frame to load this
@@ -30,16 +30,14 @@ $(() => {
 
           const target = `${window.location.href.replace(window.location.hash, '')}#!content`;
           const uploaderFrame = $(`<iframe style="position:absolute;z-index:10000;top:0;left:0;background-color:white" width="100%" height="100%" frameborder="0" src="${target}"/>`);
-          uploaderFrame.appendTo(content)
-                        .on('error', () => {
+          uploaderFrame.appendTo(content).on('error', () => {
             // On Firefox the iframe throws an error, and points to
             // about:blank instead of the src.
             const frameLocation = uploaderFrame.prop('contentWindow').location;
             if (frameLocation.href !== target) {
               frameLocation.href = target;
             }
-          })
-                        .on('load', () => {
+          }).on('load', () => {
             // Add CSS styles and reference to NX to embedded page to
             // provide a "native" look and feel for integrated content
             const nexusStyles = nexusFrame.contents().find('head style, head link[rel="stylesheet"]');
@@ -85,7 +83,6 @@ $(() => {
     // The timeout is needed for Firefox to show content after it's been
     // layed out properly
     setTimeout(() => $('main', context).css('display', 'block'), 100);
-
 
     function addEventHandlers() {
       const fileInput = $('input[type=file]', context);

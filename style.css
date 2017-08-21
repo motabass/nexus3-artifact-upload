@@ -1,0 +1,161 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+main {
+    background-color: #f4f4f4;
+    color: #333;
+    font-size: 13px;
+    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+}
+
+main > header {
+    padding: 10px 8px 36px 8px;
+    background-color: #fff;
+}
+
+main > header div {
+    display: inline-block;
+    height: 32px
+}
+
+main > header img {
+    vertical-align: top !important;
+}
+
+main > section {
+    padding: 5px 8px 5px 8px;
+    border-top: solid 1px #ddd;
+    border-bottom: solid 1px #ddd;
+}
+
+main section > h1,
+main section > h2,
+main section > h3 {
+    display: none;
+}
+
+main > section button {
+    background-color: #f4f4f4;
+    border: solid 1px transparent;
+    color: #006bbf;
+    outline: none;
+    border-radius: 5px;
+    padding: 5px 12px 5px 12px;
+    cursor: pointer;
+}
+
+main > section button:hover {
+    background-color: #ebebeb;
+    border: solid 1px #ddd;
+}
+
+main > section button.selected {
+    background-color: #fff !important;
+    border: solid 1px #fff !important;
+    color: #333 !important;
+}
+
+main > div.content {
+    padding: 12px;
+    margin: 12px;
+    background-color: #fff;
+    display: inline-block;
+    border: solid 1px #ddd;
+}
+
+main > div.content section {
+    margin: 4px 0 4px 0;
+}
+
+main > div.content label {
+    font-weight: bold;
+}
+
+main .drop-target {
+    margin: 0 0 8px 0;
+    padding: 0 1em 0 1em;
+    display: inline-block;
+    color: #2476c3;
+    border: 3px dashed #2476c3;
+    min-width: 350px;
+    text-align: center;
+}
+
+main .drop-target input,
+main .drop-target label {
+    display: none;
+}
+
+main .drop-target h1 {
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+main .drop-target span {
+    max-width: 300px;
+    text-overflow: ellipsis;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+main input,
+main button,
+main select {
+    font-size: 13px;
+}
+
+main input[type=text] {
+    box-sizing: border-box;
+    min-width: 300px;
+    min-height: 24px;
+    margin: 4px 0 4px 0;
+}
+
+main select {
+    box-sizing: border-box;
+    min-width: 300px;
+    min-height: 24px;
+    margin: 4px 0 0 0;
+}
+
+main section.upload-format header {
+    display: none;
+}
+
+main label {
+    min-width: 80px;
+    display: inline-block;
+}
+
+main section.upload-progress {
+    height: 21px;
+    width: 381px;
+    border: solid 1px silver;
+    overflow: hidden;
+    display: none;
+}
+
+main section.upload-progress div {
+    width: 0;
+    border: 0;
+    height: 21px;
+    background-color: #2476c3;
+}
+
+main section:last-child {
+    text-align: center;
+    margin-bottom: 0;
+}
