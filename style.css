@@ -28,7 +28,7 @@ main > header {
 
 main > header div {
     display: inline-block;
-    height: 32px
+    height: 32px;
 }
 
 main > header img {
